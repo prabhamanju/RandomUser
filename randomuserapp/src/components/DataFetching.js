@@ -186,35 +186,37 @@ function DataFetching(props) {
         <div>
           <div>
             <ul className="list_user">
-              {searchResults.map(item => (
-                <div className="details">
-                  <div className="user__icon">
-                    <img src={item.picture.large} alt="" />
+              {searchResults.map(item => {
+                return (
+                  <div className="details" key={item.email}>
+                    <div className="user__icon">
+                      <img src={item.picture.large} alt="" />
+                    </div>
+                    <label className="details__label"> Name:</label>
+                    <span>
+                      {item.name.first}
+                      {"  "}
+                      {item.name.last}
+                    </span>
+                    <div>
+                      <label className="details__label"> gender:</label>
+                      <span>{item.gender}</span>
+                    </div>
+                    <div>
+                      <label className="details__label"> Age:</label>
+                      <span>{item.dob.age}</span>
+                    </div>
+                    <div>
+                      <label className="details__label"> phone:</label>
+                      <span>{item.phone}</span>
+                    </div>
+                    <FontAwesomeIcon
+                      icon={faTrashAlt}
+                      onClick={() => handleRemove(searchResults.indexOf(item))}
+                    />
                   </div>
-                  <label className="details__label"> Name:</label>
-                  <span>
-                    {item.name.first}
-                    {"  "}
-                    {item.name.last}
-                  </span>
-                  <div>
-                    <label className="details__label"> gender:</label>
-                    <span>{item.gender}</span>
-                  </div>
-                  <div>
-                    <label className="details__label"> Age:</label>
-                    <span>{item.dob.age}</span>
-                  </div>
-                  <div>
-                    <label className="details__label"> phone:</label>
-                    <span>{item.phone}</span>
-                  </div>
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    onClick={() => handleRemove(searchResults.indexOf(item))}
-                  />
-                </div>
-              ))}
+                );
+              })}
             </ul>
           </div>
           <div>
