@@ -243,9 +243,9 @@ function DataFetching(props) {
                 <input type="text" name="Telephone" id="phone" />
               </li>
             </form>
-            <botton type="botton" onClick={handleSubmit}>
+            <button type="button" onClick={handleSubmit}>
               ADD
-            </botton>
+            </button>
           </div>
         </div>
       </div>
